@@ -4,7 +4,7 @@ SET Status = (CASE
                  WHEN Status = 'Married' THEN 1 
                  WHEN Status = 'UnMarried THEN 2
                  ELSE Status 
-              END )
+              END );
 
 ######################################## mySQL #######################################################
 -- Update multiple rows in same query using mySQL
@@ -63,7 +63,7 @@ WHEN MATCHED THEN
    UPDATE
       SET F1301 = source.F1301;
 
-# Using a table value constructor in this way would not scale to large rows! Copy the data from Excel to a table on the server, then use the table as the source e.g.
+-- Using a table value constructor in this way would not scale to large rows! Copy the data from Excel to a table on the server, then use the table as the source e.g.
 MERGE INTO [STORESQL].[dbo].[RPT_ITM_D] 
    USING [STORESQL].[dbo].MyStagingTable AS source
       ON F01 = source.F01
