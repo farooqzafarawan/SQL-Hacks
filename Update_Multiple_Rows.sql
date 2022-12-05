@@ -1,5 +1,5 @@
+######################################## mySQL #######################################################
 #Update multiple rows in same query using mySQL
-
 INSERT INTO countries (id, updated_at, name)
 VALUES
 (4, now(), 'American Samoa'),
@@ -15,3 +15,22 @@ SET name = (case when id=4  then 'American Samoa'
     updated_at = now()
 WHERE id in (4,9,16);
 
+########################################################## PostgreSQL #####3####################################################
+## Use update ... from syntax and use a mapping table. If you want to update more than one column, it's much more generalizable:
+update test as t set
+    column_a = c.column_a
+from (values
+    ('123', 1),
+    ('345', 2)  
+) as c(column_b, column_a) 
+where c.column_b = t.column_b;
+You can add as many columns as you like:
+
+update test as t set
+    column_a = c.column_a,
+    column_c = c.column_c
+from (values
+    ('123', 1, '---'),
+    ('345', 2, '+++')  
+) as c(column_b, column_a, column_c) 
+where c.column_b = t.column_b;
