@@ -2,7 +2,7 @@
 UPDATE MyTable
 SET Status = (CASE 
                  WHEN Status = 'Married' THEN 1 
-                 WHEN Status = 'UnMarried THEN 2
+                 WHEN Status = 'UnMarried' THEN 2
                  ELSE Status 
               END );
 
