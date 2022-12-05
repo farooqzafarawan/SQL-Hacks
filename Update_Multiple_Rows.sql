@@ -24,13 +24,14 @@ from (values
     ('345', 2)  
 ) as c(column_b, column_a) 
 where c.column_b = t.column_b;
-You can add as many columns as you like:
 
-update test as t set
-    column_a = c.column_a,
-    column_c = c.column_c
+## -- postgres FTW
+update users as u set 
+  email = u2.email,
+  first_name = u2.first_name,
+  last_name = u2.last_name
 from (values
-    ('123', 1, '---'),
-    ('345', 2, '+++')  
-) as c(column_b, column_a, column_c) 
-where c.column_b = t.column_b;
+  (1, 'hollis@weimann.biz', 'Hollis', 'Connell'),
+  (2, 'robert@duncan.info', 'Robert', 'Duncan')
+) as u2(id, email, first_name, last_name)
+where u2.id = u.id;
