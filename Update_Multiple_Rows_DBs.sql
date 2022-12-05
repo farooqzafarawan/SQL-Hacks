@@ -24,7 +24,7 @@ SET name = (case when id=4  then 'American Samoa'
 WHERE id in (4,9,16);
 
 ########################################################## PostgreSQL #####3####################################################
-## Use update ... from syntax and use a mapping table. If you want to update more than one column, it's much more generalizable:
+-- Use update ... from syntax and use a mapping table. If you want to update more than one column, it's much more generalizable:
 update test as t set
     column_a = c.column_a
 from (values
