@@ -7,7 +7,7 @@ SET Status = (CASE
               END )
 
 ######################################## mySQL #######################################################
-#Update multiple rows in same query using mySQL
+-- Update multiple rows in same query using mySQL
 INSERT INTO countries (id, updated_at, name)
 VALUES
 (4, now(), 'American Samoa'),
@@ -33,7 +33,7 @@ from (values
 ) as c(column_b, column_a) 
 where c.column_b = t.column_b;
 
-## -- postgres FTW
+-- postgres FTW
 update users as u set 
   email = u2.email,
   first_name = u2.first_name,
@@ -45,7 +45,7 @@ from (values
 where u2.id = u.id;
 
 ########################################### SQL SERVER #################################################################
-## Make a unique constraint on the F01 column and then use an insert statement with an 'ON DUPLICATE KEY UPDATE' statement.
+-- Make a unique constraint on the F01 column and then use an insert statement with an 'ON DUPLICATE KEY UPDATE' statement.
 INSERT INTO [STORESQL].[dbo].[RPT_ITM_D] (F01, F1301)
 VALUES
   ('0000000000001','1.29'),
